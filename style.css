@@ -7,6 +7,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+body.hideScroll {
+    overflow:hidden;
+}
+
 .hide {
     display: none;
 }
@@ -21,17 +25,43 @@ a:hover {
     text-decoration: underline;
     color: #ff5e84
 }
+
+
+.button {
+    background: #ff5e84;
+    color:white;
+    width: 150px;
+    height: 40px;
+    border-radius:8px;
+    box-shadow: 3px 8px 10px rgba(0, 0, 0, 0.39); 
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover {
+    text-decoration:none; 
+    background-color: #0984e3;
+}
+
+
+
+
+
+
 #container {
     width: 80%;
     max-width: 980px;
-    margin:40px 20px;
+    margin:40px 50px;
     display: flex;
     
 }
 
 #intro {
     width: 300px;
-    margin-right:20px;
+    margin-right:120px;
 }
 
 main {
@@ -89,7 +119,7 @@ button {
     border: none;
     font-weight: bold;
     background: none;
-    margin-bottom:32px; 
+    margin-bottom:0px; 
     outline: none;
     font-size: 14px;
     letter-spacing: 0.1px;
@@ -100,18 +130,7 @@ button:hover{
     text-decoration:underline;
 }
 
-button.fat {
-    background: #ff5e84;
-    color:white;
-    width: 150px;
-    height: 40px;
-    border-radius:6px;
-    box-shadow: 3px 8px 10px rgba(0, 0, 0, 0.39); 
-}
 
-button.fat:hover {
-    text-decoration:none; 
-}
 
 
 footer, #buttons {
@@ -128,28 +147,36 @@ footer, #buttons {
     position:absolute;
     top: 0px;
     display:flex;
-    width: 100vw;
-    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom:0;
     justify-content: center;
     transition: 400ms;
 }
 
+#modal.addScroll {
+    overflow: auto;
+}
 
 
 #modal .content {
-    margin-top: 128px;
+    margin-top: 0%;
     color:white;
+
 }
 
 #modal .content h1 {
     text-align:center;
     text-transform: uppercase;
+
 }
 
 #modal form {
     width: 80%;
     max-width: 800px;
-    margin: 0 auto;
+    height: 500px;
+    margin: 0 auto 25%;
     display:grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
@@ -189,7 +216,6 @@ form a {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 32px;
     align-self: end;
     border-radius: 5px;
     font-size: 14px;
@@ -226,3 +252,64 @@ form button:hover {
     visibility: hidden;
 }
 
+
+#page-idea #container {
+    display: block;
+}
+#page-idea header {
+   display: flex;
+   justify-content: space-between;
+}
+
+#page-idea nav {
+    display: flex;
+    align-items: center;
+
+}
+
+#page-idea nav li {
+    list-style-type: none;
+    margin-right: 16px;
+}
+
+#page-ideas nav li a.button {
+    color: white;
+    text-decoration: none;
+}
+
+
+#page-idea nav li:last-child {
+    margin: 0;
+
+}
+
+
+
+section#title {
+    text-align: center;
+
+}
+
+section#title p {
+    color: rgba(0, 0, 0, 0.61);
+    margin-bottom: 0px;
+}
+
+section#title h1 {
+    margin: 0px;
+    font-size: 30px;
+}
+
+section#ideas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+section#ideas .idea {
+    margin: 0px;
+}
+
+section#title, section#ideas, footer {
+    margin-top: 64px;
+}
